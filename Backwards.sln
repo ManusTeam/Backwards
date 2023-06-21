@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33717.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Backwards", "Backwards\Backwards.vbproj", "{D16B88DE-F8D1-4D0E-A942-CCA789FDAD3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2217D84C-75DE-4F6F-BB77-CFD83F491CF0}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D16B88DE-F8D1-4D0E-A942-CCA789FDAD3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D16B88DE-F8D1-4D0E-A942-CCA789FDAD3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D16B88DE-F8D1-4D0E-A942-CCA789FDAD3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D16B88DE-F8D1-4D0E-A942-CCA789FDAD3E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C1E5C86-2158-44D4-8A37-ABDA2D98A77D}
+	EndGlobalSection
+EndGlobal

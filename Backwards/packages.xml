@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<packages>
+	<backwards>
+		<name>Backwards</name>
+		<size>Undefined</size>
+		<ver>Undefined</ver>
+		<description>Package manager</description>
+	</backwards>
+	<hello>
+		<name>Hello</name>
+		<size>0KB</size>
+		<ver>1.0</ver>
+		<description>Hello World.</description>
+	</hello>
+</packages>
