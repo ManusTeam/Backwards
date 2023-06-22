@@ -596,7 +596,9 @@ Module Program
         If query = Nothing Or query = "" Or query = " " Then
             query = "WARN | No package found"
         End If
+#Disable Warning BC42105 ' Function doesn't return a value on all code paths
     End Function
+#Enable Warning BC42105 ' Function doesn't return a value on all code paths
 End Module
 Public Class InUnScripts
     Public Shared Sub Install(path As String)
