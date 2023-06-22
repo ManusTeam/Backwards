@@ -19,14 +19,23 @@ jobs:
     - name: Hol vagyok?
       run: C:\actions-runner\whereami.bat
     - uses: actions/checkout@v3
+    - name: Feladat előkészítése védelmi ellenörzésre is
+    - uses: nuget/setup-nuget@04b0c2b8d1b97922f67eca497d7cf0bf17b8ffe1
+    - uses: microsoft/setup-msbuild@v1.0.2
     - name: .NET Előkészítése
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 3.1.x
+    - name: Projekt előkészítése ellenőrzésre
+      uses: security-code-scan/security-code-scan-add-action@f8ff4f2763ed6f229eded80b1f9af82ae7f32a0d
     - name: Függőségek visszaállítása
       run: dotnet restore
     - name: Építés
       run: dotnet build -c Release --no-restore
+    - name: Sarif átalakítása feltöltés elött
+      uses: security-code-scan/security-code-scan-results-action@cdb3d5e639054395e45bf401cba8688fcaf7a687
+    - name: Sarif feltöltése
+      uses: github/codeql-action/upload-sarif@v2
     - name: Tesztelés
       run: dotnet test --no-build -c Release --verbosity normal
     - name: Elkészült fájlok feltöltése
@@ -36,24 +45,3 @@ jobs:
         path: C:\actions-runner\_work\Backwards\Backwards\Backwards\bin\Release\netcoreapp3.1\**
         retention-days: 10
         if-no-files-found: error
-  _security:
-    runs-on: self-hosted
-    steps:
-    - uses: actions/checkout@v3
-    - uses: nuget/setup-nuget@04b0c2b8d1b97922f67eca497d7cf0bf17b8ffe1
-    - uses: microsoft/setup-msbuild@v1.0.2
-
-    - name: Projekt előkészítése ellenőrzésre
-      uses: security-code-scan/security-code-scan-add-action@f8ff4f2763ed6f229eded80b1f9af82ae7f32a0d
-
-    - name: Függőségek visszaállítása
-      run: dotnet restore
-
-    - name: Építés
-      run: dotnet build -c Release --no-restore
-
-    - name: Sarif átalakítása feltöltés elött
-      uses: security-code-scan/security-code-scan-results-action@cdb3d5e639054395e45bf401cba8688fcaf7a687
-
-    - name: Sarif feltöltése
-      uses: github/codeql-action/upload-sarif@v2
