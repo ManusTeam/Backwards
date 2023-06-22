@@ -6,6 +6,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>Backwards</AssemblyName>
     <UseApplicationFramework>False</UseApplicationFramework>
+    <Version>1.2</Version>
+    <Authors>BalazsManus</Authors>
+    <Company>ManusTeam</Company>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
