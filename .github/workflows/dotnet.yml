@@ -1,20 +1,26 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
-name: .NET
+name: Backwards Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+    paths:
+      - 'Backwards/**'
+      - '!.vs/**'
+      - '.github/**'
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
-  epites:
-
+  _build:
     runs-on: self-hosted
-
     steps:
+    - name: Hol vagyok?
+      run: C:\actions-runner\whereami.bat
     - uses: actions/checkout@v3
     - name: .NET Előkészítése
       uses: actions/setup-dotnet@v3
@@ -23,6 +29,13 @@ jobs:
     - name: Függőségek visszaállítása
       run: dotnet restore
     - name: Építés
-      run: dotnet build --no-restore
+      run: dotnet build -c Release --no-restore
     - name: Tesztelés
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build -c Release --verbosity normal
+    - name: Elkészült fájlok feltöltése
+      uses: actions/upload-artifact@v3
+      with:
+        name: Frissen csomagolt építés
+        path: C:\actions-runner\_work\Backwards\Backwards\Backwards\bin\Release\netcoreapp3.1\**
+        retention-days: 10
+        if-no-files-found: error
