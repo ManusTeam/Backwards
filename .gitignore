@@ -4,5 +4,9 @@ bin/
 *.cache
 TempPE/
 *cache.v2
-#Random suo fájl. nem tom mi az egyébként
-.suo
+*.vsidx
+*.props
+*.target
+#Felhasználói beállítások, avagy ne kurja fel a másikakat
+*.suo
+*.user
