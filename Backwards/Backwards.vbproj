@@ -56,8 +56,4 @@
     </None>
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="call C:\Users\72661341100.DFAD\source\repos\Backwards\build.bat" />
-  </Target>
-
 </Project>
