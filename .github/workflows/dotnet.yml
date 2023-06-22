@@ -36,4 +36,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Frissen csomagolt építés
-        path: C:\actions-runner\_work\Backwards\Backwards\Backwards\bin\Release\netcoreapp3.1\latest-build.zip
+        path: C:\actions-runner\_work\Backwards\Backwards\Backwards\bin\Release\netcoreapp3.1\latest-build.7z
+        retention-days: 10
+        if-no-files-found: error
