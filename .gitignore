@@ -3,3 +3,6 @@ bin/
 #Szemetek figyelmen kívül hagyása
 *.cache
 TempPE/
+*cache.v2
+#Random suo fájl. nem tom mi az egyébként
+.suo
