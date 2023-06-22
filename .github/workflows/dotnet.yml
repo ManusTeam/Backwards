@@ -30,5 +30,10 @@ jobs:
       run: dotnet build -c Release --no-restore
     - name: Tesztelés
       run: dotnet test --no-build -c Release --verbosity normal
-    - name: Elkészült Fájlok csomagolása
-      run: echo OK
+    - name: Elkészült fájlok csomagolása
+      run: C:\actions-runner\packbuild.bat
+    - name: Elkészült fájlok feltöltése
+      uses: actions/upload-artifact@v3
+      with:
+        name: Frissen csomagolt építés
+        path: C:\actions-runner\_work\Backwards\Backwards\Backwards\bin\Release\netcoreapp3.1\latest-build.zip
