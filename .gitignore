@@ -11,6 +11,5 @@ TempPE/
 *.suo
 *.user
 *.wsuo
-.vs\Backwards\FileContentIndex\*
-.vs\Backwards\v17\*
+/.vs/Backwards/FileContentIndex/*
 /.vs/Backwards/v17/.suo
