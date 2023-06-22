@@ -10,6 +10,7 @@ on:
     paths:
       - 'Backwards/**'
       - '!.vs/**'
+      - '.github/**'
   pull_request:
     branches:
       - main
