@@ -10,3 +10,7 @@ TempPE/
 #Felhasználói beállítások, avagy ne kurja fel a másikakat
 *.suo
 *.user
+*.wsuo
+.vs\Backwards\FileContentIndex\*
+.vs\Backwards\v17\*
+/.vs/Backwards/v17/.suo
