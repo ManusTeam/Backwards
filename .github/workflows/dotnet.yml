@@ -42,7 +42,6 @@ jobs:
     - name: Új kiadás tervezése
       uses: release-drafter/release-drafter@v5
       with:
-        config-name: reldraft.yml
         prerelease: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
