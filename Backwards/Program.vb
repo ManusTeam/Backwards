@@ -39,6 +39,7 @@ Module Program
             Console.WriteLine("Describe | '/des', '-des', 'describe' | Show the description of a package")
             Console.WriteLine("List     | '/l', '-l', 'list'         | Lists installed packages")
             Console.WriteLine("Settings | '/set', '-set', 'setup'    | Opens settings")
+            Console.WriteLine("About    | '/a', '-a', 'about'        | Shows credits")
             Console.ForegroundColor = ConsoleColor.DarkYellow
             Console.WriteLine("These commands aren't working for now.")
             Console.WriteLine("Install  | '/i', '-i', 'install'      | Install a package")
@@ -331,6 +332,29 @@ Module Program
                 Console.WriteLine(query)
                 Console.ResetColor()
             End If
+#End Region
+#Region "credits"
+        ElseIf arguments(0) = "about" Or arguments(0) = "/a" Or arguments(0) = "-a" Then
+            Console.ForegroundColor = ConsoleColor.Green
+            Console.WriteLine("Backwards Package Manager " + version)
+            Console.ResetColor()
+            Console.WriteLine("")
+            Console.Write("The original from ")
+            Console.ForegroundColor = ConsoleColor.Yellow
+            Console.Write("ManusTeam ")
+            Console.ResetColor()
+            Console.Write("and ")
+            Console.ForegroundColor = ConsoleColor.Yellow
+            Console.WriteLine("BalazsManus")
+            Console.ResetColor()
+            Console.ForegroundColor = ConsoleColor.Blue
+            Console.WriteLine("https://github.com/ManusTeam/Backwards")
+            Console.ResetColor()
+            Console.WriteLine("")
+            Console.WriteLine("Contributors:")
+            Console.ForegroundColor = ConsoleColor.Yellow
+            Console.WriteLine("BalazsManus")
+            Console.ResetColor()
 #End Region
 #Region "shit on end"
         Else
