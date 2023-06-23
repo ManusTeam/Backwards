@@ -7,7 +7,7 @@ on:
     paths:
       - 'Backwards/**'
       - '!.vs/**'
-      - '.github/**'
+      - '!.github/**'
   pull_request:
     branches:
       - main
@@ -39,11 +39,3 @@ jobs:
         path: C:\actions-runner\_work\Backwards\Backwards\Backwards\bin\Release\netcoreapp3.1\**
         retention-days: 10
         if-no-files-found: error
-    - name: Új kiadás készítése
-      id: release
-      uses: dev-build-deploy/release-me@v0
-      with:
-        token: ${{ github.token }}
-        prefix: v  # OPTIONAL; prefixes the Semantic Verion with v (e.g. v1.0.0)
-    - if: ${{ steps.release.outputs.created }}
-      run: echo ${{ fromJSON(steps.release.outputs.release).tag_name }}
